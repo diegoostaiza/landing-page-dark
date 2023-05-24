@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"/>
+  </head>
+  <body>
+    <main>
+      <header>
+        <a href="#" class="logo"
+          ><img src="assets/logo.png" alt="Logo netflix"
+        /></a>
+        <ul class="navegacion">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Series</a></li>
+          <li><a href="#">Peliculas</a></li>
+          <li><a href="#">Mi lista</a></li>
+        </ul>
+        <div class="busqueda">
+          <input type="text" placeholder="Buscar" />
+          <button class="buscar"><span class="material-icons">search</span></button>
+        </div>
+      </header>
+      <section class="banner">
+        <img class="bg" src="assets/fondo.png" alt="personaje" />
+        <span class="sombraBanner"></span>
+        <div class="contenido">
+          <img
+            class="titulo-serie"
+            src="assets/logoDark.png"
+            alt="titulo de serie"
+          />
+          <h4>
+            <span>2022</span>
+            <span>16+</span>
+            <span>3 Temporadas</span>
+            <span><i>Serie</i></span>
+          </h4>
+          <p>
+            La desaparición de un niño lleva a cuatro familias a una frenética búsqueda, mientras descubren un misterio que abarca tres generaciones.
+          </p>
+
+          <div class="botones">
+            <a href="#">Play</a>
+            <a href="#">Mi lista</a>
+          </div>
+        </div>
+        <a href="#" class="play"  onclick="verTrailer();">
+        <img src="assets/play.png" alt="ver trailer"/>Ver Trailer</a>
+      </section>
+      <section class="trailer">
+        <video src="assets/trailer.mp4" controls ></video>
+        <img class="close" src="assets/close.png" alt="cerrar pestaña"  onclick="verTrailer();">
+      </section>
+    </main>
+    <script>
+        function verTrailer(){
+            const trailer = document.querySelector(".trailer");
+            const video = document.querySelector("video");
+            trailer.classList.toggle("active");
+            video.currentTime = 0 ;
+            video.pause();
+        }
+    </script>
+  </body>
+</html>

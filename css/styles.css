@@ -1,0 +1,296 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+body {
+  background: #000;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 100px;
+  z-index: 100;
+}
+header .logo img {
+  max-width: 150px;
+}
+
+.navegacion {
+  display: flex;
+}
+.navegacion li {
+  list-style: none;
+  margin: 0 10px;
+}
+.navegacion li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.navegacion li:hover a {
+  color: #de0611;
+}
+
+.busqueda {
+  position: relative;
+  width: 300px;
+  height: 40px;
+}
+.busqueda input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  outline: none;
+  border-radius: 5px;
+  padding: 0 10px 0 45px;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+.busqueda input ::-moz-placeholder {
+  color: #fff;
+}
+.busqueda input ::placeholder {
+  color: #fff;
+}
+.busqueda .buscar {
+  color: white;
+  border: none;
+  position: relative;
+  top: 20%;
+  left: 10px;
+  background: transparent;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.banner .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.banner .sombraBanner {
+  position: absolute;
+  background: linear-gradient(45deg, black 10%, transparent);
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.contenido {
+  position: relative;
+  z-index: 1;
+  max-width: 550px;
+}
+.contenido .titulo-serie {
+  max-width: 250px;
+}
+
+.banner .contenido h4 {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+}
+.banner .contenido h4 span {
+  padding: 0 10px;
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+.banner .contenido h4 span:last-child {
+  border: none;
+}
+.banner .contenido h4 span i {
+  background: #de0611;
+  color: white;
+  padding: 3px 8px;
+  display: inline-block;
+  border-radius: 2px;
+  font-style: normal;
+}
+.banner .contenido p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: white;
+  line-height: 1.5rem;
+  margin: 10px 0 25px;
+}
+.banner .contenido .botones {
+  position: relative;
+}
+.banner .contenido .botones a {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  background: #de0611;
+  color: #fff;
+  padding: 6px 20px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.banner .contenido .botones a:last-child {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.banner .contenido .botones a:hover:last-child {
+  background: #de0611;
+}
+
+.play {
+  position: absolute;
+  bottom: 60px;
+  left: 110px;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  gap: 20px;
+}
+.play img {
+  max-width: 50px;
+}
+
+.trailer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+}
+.trailer.active {
+  visibility: visible;
+  opacity: 1;
+}
+.trailer video {
+  max-width: 900px;
+  outline: none;
+  border-radius: 5px;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+  filter: invert(1);
+  max-width: 32px;
+}
+
+@media (max-width: 990px) {
+  header {
+    padding: 20px 50px;
+    flex-direction: column;
+  }
+  .navegacion {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px 0;
+  }
+  .banner {
+    padding: 100px 50px;
+    display: flex;
+    flex-direction: column;
+  }
+  .banner .play {
+    display: flex;
+    font-size: 1em;
+  }
+  .banner .play img {
+    margin-right: 10px;
+    max-width: 40px;
+  }
+  .banner .contenido {
+    margin-top: 100%;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  .banner .contenido .titulo-serie {
+    margin: 20px 20px;
+    margin: 0 auto;
+  }
+  .trailer video {
+    max-width: 90%;
+  }
+}
+@media (max-width: 600px) {
+  header {
+    padding: 20px;
+  }
+  .busqueda {
+    position: relative;
+    width: 100% -20px;
+    height: 40px;
+  }
+  .banner {
+    padding: 220px 20px 120px;
+  }
+  .banner .play {
+    left: 20px;
+    font-size: 1rem;
+    bottom: 30px;
+  }
+}/*# sourceMappingURL=styles.css.map */
